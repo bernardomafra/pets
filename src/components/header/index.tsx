@@ -5,25 +5,29 @@ import MapPin from '../../assets/map-pin.svg';
 import ArrowDown from '../../assets/arrow-down.svg';
 import HeaderDog from '../../assets/header-dog.svg';
 import {StyleSheet} from 'react-native';
+import {Picker} from '@react-native-picker/picker';
 
 const Header: React.FC = () => {
-  // const [location, setLocation] = React.useState<String>('');
+  const [location, setLocation] = React.useState<String>('Malang');
 
   return (
     <Styles.HeaderContainer>
       <Styles.SmallFont>Location</Styles.SmallFont>
       <Styles.Select>
         <MapPin />
-        <Styles.BigFont>Malang</Styles.BigFont>
+        <Styles.BigFont>{location}</Styles.BigFont>
         <ArrowDown />
       </Styles.Select>
-      {/* <Select  TODO
-          selectedValue={location}
-          onValueChange={(value) => setLocation(value)}>
-          <Select.Item label="Location 1" value="location-1" />
-          <Select.Item label="Location 2" value="location-2" />
-          <Select.Item label="Location 3" value="location-3" />
-        </Select> */}
+      <Picker
+        itemStyle={sheet.item}
+        mode="dropdown"
+        selectedValue={location}
+        onValueChange={(value) => setLocation(value)}
+        style={sheet.picker}>
+        <Picker.Item label="Malang" value="Malang" />
+        <Picker.Item label="Another" value="Another" />
+        <Picker.Item label="Unknown" value="Unknown" />
+      </Picker>
       <Styles.PremiumRow>
         <Styles.PremiumContainer>
           <Styles.PremiumTitle>Become premium with us</Styles.PremiumTitle>
@@ -45,6 +49,21 @@ const sheet = StyleSheet.create({
     position: 'absolute',
     right: -60,
     top: -105,
+  },
+  picker: {
+    position: 'absolute',
+    top: 20,
+    left: 125,
+
+    width: '10%',
+    fontSize: 24,
+    color: '#555555',
+    fontFamily: 'MontserratAlternates-Medium',
+  },
+  item: {
+    fontFamily: 'MontserratAlternates-Medium',
+    opacity: 0.1,
+    color: '#37891f',
   },
 });
 

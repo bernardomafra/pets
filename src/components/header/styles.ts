@@ -39,6 +39,7 @@ export const Select = styled.View`
   justify-content: space-between;
   margin-top: 10px;
   margin-bottom: 25px;
+  position: relative;
 `;
 
 export const SmallFont = styled.Text`
@@ -68,9 +69,11 @@ export const PremiumDescription = styled.Text`
   font-family: 'Poppins-Medium';
   font-style: normal;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 20px;
   color: #555555;
+
+  max-width: 70%;
 `;
 
 export const PremiumButton = styled.TouchableOpacity`
