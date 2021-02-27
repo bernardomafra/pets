@@ -9,19 +9,19 @@
  */
 
 import React from 'react';
-import {Text} from 'react-native';
 
-import {Container} from './global-styles';
+import * as Styles from './global-styles';
 import CustomStatusBar from './src/components/status-bar';
+import Header from './src/components/header';
 
 const App = () => {
   return (
-    <>
+    <Styles.Screen>
       <CustomStatusBar backgroundColor="#FFF" barStyle="dark-content" />
-      <Container>
-        <Text>teste</Text>
-      </Container>
-    </>
+      <Styles.Container>
+        <Header />
+      </Styles.Container>
+    </Styles.Screen>
   );
 };
 
