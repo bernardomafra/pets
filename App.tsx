@@ -13,6 +13,7 @@ import React from 'react';
 import * as Styles from './global-styles';
 import CustomStatusBar from './src/components/status-bar';
 import Header from './src/components/header';
+import Body from './src/components/body';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
       <CustomStatusBar backgroundColor="#FFF" barStyle="dark-content" />
       <Styles.Container>
         <Header />
+        <Body />
       </Styles.Container>
     </Styles.Screen>
   );
