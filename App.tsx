@@ -12,7 +12,7 @@ import React from 'react';
 import {Text} from 'react-native';
 
 import {Container} from './global-styles';
-import CustomStatusBar from './src/status-bar';
+import CustomStatusBar from './src/components/status-bar';
 
 const App = () => {
   return (
