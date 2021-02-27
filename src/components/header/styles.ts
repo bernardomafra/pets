@@ -3,6 +3,8 @@ import styled from 'styled-components/native';
 export const HeaderContainer = styled.View`
   display: flex;
   flex-direction: column;
+
+  margin-bottom: 28px;
 `;
 
 export const Row = styled.View`
@@ -43,17 +45,18 @@ export const SmallFont = styled.Text`
   font-size: 17px;
   color: #c4c4c4;
   line-height: 20.67px;
+  font-family: 'MontserratAlternates-Medium';
 `;
 
 export const BigFont = styled.Text`
   font-size: 25px;
   color: #555555;
-  font-weight: 600;
+  font-family: 'MontserratAlternates-Medium';
 `;
 
 export const PremiumTitle = styled.Text`
   color: #f57b51;
-  font-family: Montserrat Alternates;
+  font-family: 'MontserratAlternates-Medium';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -62,9 +65,9 @@ export const PremiumTitle = styled.Text`
 export const PremiumDescription = styled.Text`
   margin-top: 8px;
   margin-bottom: 25px;
-  font-family: Poppins;
+  font-family: 'Poppins-Medium';
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 15px;
   line-height: 20px;
   color: #555555;
@@ -77,7 +80,7 @@ export const PremiumButton = styled.TouchableOpacity`
 `;
 
 export const PremiumButtonText = styled.Text`
-  font-family: Poppins;
+  font-family: 'Poppins-Medium';
   font-style: normal;
   font-weight: 500;
   font-size: 15px;
