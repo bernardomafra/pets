@@ -15,6 +15,8 @@ import CustomStatusBar from './src/components/status-bar';
 import Header from './src/components/header';
 import Body from './src/components/body';
 
+import './mock-server';
+
 const App = () => {
   return (
     <Styles.Screen>
