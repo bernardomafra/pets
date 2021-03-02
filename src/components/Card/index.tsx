@@ -1,5 +1,5 @@
 import React from 'react';
-import {Image} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {getIconSvgByPetType, getGenderSvgByName} from '../../utils';
 
 import * as Styles from './styles';
@@ -17,23 +17,44 @@ const Card: React.FC<Types.CardProps> = ({
   const Gender = getGenderSvgByName(gender);
 
   return (
-    <Styles.Container>
+    <Styles.Container style={sheet.card}>
       <Styles.LeftSide>
-        <Styles.Photo source={require('../../assets/buddy.png')} />
+        {/* <Styles.Photo source={require('../../assets/buddy.png')} /> */}
       </Styles.LeftSide>
       <Styles.RightSide>
-        <Styles.Header>
-          <Styles.Title>{title}</Styles.Title>
-          <Styles.Subtitle>{subtitle}</Styles.Subtitle>
-          {Icon && <Icon />}
-        </Styles.Header>
-        <Styles.Footer>
+        <Styles.Column>
+          <Styles.Row width={150}>
+            <Styles.Title>{title}</Styles.Title>
+            {Icon && <Icon fill="#C4C4C4" />}
+          </Styles.Row>
+          <Styles.Row width={150}>
+            <Styles.Subtitle>{subtitle}</Styles.Subtitle>
+          </Styles.Row>
+        </Styles.Column>
+        <Styles.Row justify="space-between">
           <Styles.Age>{age}</Styles.Age>
+          <Styles.Dot />
           <Gender />
-        </Styles.Footer>
+          <Styles.Gender color={Gender.fill}>
+            {gender.charAt(0).toUpperCase()}
+          </Styles.Gender>
+        </Styles.Row>
       </Styles.RightSide>
     </Styles.Container>
   );
 };
+
+const sheet = StyleSheet.create({
+  card: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 4,
+  },
+});
 
 export default Card;

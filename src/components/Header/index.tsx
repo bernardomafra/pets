@@ -5,10 +5,9 @@ import MapPin from '../../assets/map-pin.svg';
 import ArrowDown from '../../assets/arrow-down.svg';
 import HeaderDog from '../../assets/header-dog.svg';
 import {StyleSheet} from 'react-native';
-import {Picker} from '@react-native-picker/picker';
 
 const Header: React.FC = () => {
-  const [location, setLocation] = React.useState<String>('Malang');
+  const [location, setLocation] = React.useState<String>('Sabará');
 
   return (
     <Styles.HeaderContainer>
@@ -18,16 +17,6 @@ const Header: React.FC = () => {
         <Styles.BigFont>{location}</Styles.BigFont>
         <ArrowDown />
       </Styles.Select>
-      <Picker
-        itemStyle={sheet.item}
-        mode="dropdown"
-        selectedValue={location}
-        onValueChange={(value) => setLocation(value)}
-        style={sheet.picker}>
-        <Picker.Item label="Malang" value="Malang" />
-        <Picker.Item label="Another" value="Another" />
-        <Picker.Item label="Unknown" value="Unknown" />
-      </Picker>
       <Styles.PremiumRow>
         <Styles.PremiumContainer>
           <Styles.PremiumTitle>Become premium with us</Styles.PremiumTitle>
