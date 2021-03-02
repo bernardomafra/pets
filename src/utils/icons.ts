@@ -10,7 +10,7 @@ type IconMap = {
   [key: string]: React.FC<SvgProps>;
 };
 
-export const getIconByPetType = (name: string) => {
+export const getIconSvgByKey = (name: string) => {
   const map: IconMap = {
     all: Paw,
     cat: Cat,

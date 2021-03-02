@@ -30,7 +30,6 @@ const Body: React.FC = () => {
       </Styles.SearchBar>
       <Styles.Categories>
         {categories.map((c) => {
-          const Icon = getIconByPetType(c.key);
           return (
             <Styles.Badge
               key={c.key}
