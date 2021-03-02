@@ -4,7 +4,7 @@ import * as Styles from './styles';
 import SearchIcon from '../../assets/search-icon.svg';
 import {StyleSheet} from 'react-native';
 
-import Badge from '../badge';
+import Badge from '../Badge';
 
 import * as Types from './types';
 

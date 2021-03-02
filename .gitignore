@@ -106,7 +106,6 @@ package-lock.json
 /ReactCommon/react/renderer/components/rncore/
 
 # Visual studio
-.vscode
 .vs
 
 # Android memory profiler files
