@@ -1,5 +1,5 @@
 export type BadgeProps = {
-  key: string;
+  name: string;
   label: string;
   selected?: boolean;
   onClickAction?: (param: any) => void;

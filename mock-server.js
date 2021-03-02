@@ -7,10 +7,10 @@ if (window.server) {
 window.server = createServer({
   routes() {
     this.get('/api/categories', () => [
-      {label: 'All', key: 'all'},
-      {label: 'Cat', key: 'cat'},
-      {label: 'Dog', key: 'dog'},
-      {label: 'Bird', key: 'bird'},
+      {label: 'All', name: 'all'},
+      {label: 'Cat', name: 'cat'},
+      {label: 'Dog', name: 'dog'},
+      {label: 'Bird', name: 'bird'},
     ]);
   },
 });

@@ -1,23 +1,23 @@
 import React from 'react';
 import * as Styles from './styles';
-import {getIconSvgByKey} from '../../utils';
+import {getIconSvgByName} from '../../utils';
 
 import {BadgeProps} from './types';
 
 const Badge: React.FC<BadgeProps> = ({
-  key,
+  name,
   label,
   selected = false,
   onClickAction,
 }: BadgeProps) => {
   let Icon = null;
 
-  if (key) {
-    Icon = getIconSvgByKey(key);
+  if (name) {
+    Icon = getIconSvgByName(name);
   }
 
   return (
-    <Styles.Badge key={key} selected={selected} onPress={onClickAction}>
+    <Styles.Badge selected={selected} onPress={onClickAction}>
       {Icon && <Icon fill={selected ? '#FFF' : '#777777'} />}
       <Styles.BadgeText selected={selected}>{label}</Styles.BadgeText>
     </Styles.Badge>

@@ -4,7 +4,8 @@ import * as Styles from './styles';
 import SearchIcon from '../../assets/search-icon.svg';
 import {StyleSheet} from 'react-native';
 
-import {getIconByPetType} from '../../utils';
+import Badge from '../badge';
+
 import * as Types from './types';
 
 const Body: React.FC = () => {
@@ -31,15 +32,13 @@ const Body: React.FC = () => {
       <Styles.Categories>
         {categories.map((c) => {
           return (
-            <Styles.Badge
-              key={c.key}
-              selected={category === c.key}
-              onPress={() => setCategory(c.key)}>
-              <Icon fill={category === c.key ? '#FFF' : '#777777'} />
-              <Styles.BadgeText selected={category === c.key}>
-                {c.label}
-              </Styles.BadgeText>
-            </Styles.Badge>
+            <Badge
+              key={c.name}
+              name={c.name}
+              label={c.label}
+              selected={category === c.name}
+              onClickAction={() => setCategory(c.name)}
+            />
           );
         })}
       </Styles.Categories>
