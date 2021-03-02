@@ -1,19 +1,39 @@
 import React from 'react';
 import {Image} from 'react-native';
-import { getIconSvgByName } from '../../utils';
+import {getIconSvgByPetType, getGenderSvgByName} from '../../utils';
 
-// import * as Styles from './styles';
+import * as Styles from './styles';
 
-const Index = ({title, subtitle}) => {
-  const Icon = getIconSvgByName(name)
+import * as Types from './types';
+
+const Card: React.FC<Types.CardProps> = ({
+  petType,
+  title,
+  subtitle,
+  age,
+  gender,
+}) => {
+  const Icon = getIconSvgByPetType(petType);
+  const Gender = getGenderSvgByName(gender);
+
   return (
     <Styles.Container>
-      <Image source="" />
-      <Styles.Title>Buddy</Styles.Title>
-      <Styles.Subtitle>Shiba Inu</Styles.Subtitle>
-      <Icon>
+      <Styles.LeftSide>
+        <Styles.Photo source={require('../../assets/buddy.png')} />
+      </Styles.LeftSide>
+      <Styles.RightSide>
+        <Styles.Header>
+          <Styles.Title>{title}</Styles.Title>
+          <Styles.Subtitle>{subtitle}</Styles.Subtitle>
+          {Icon && <Icon />}
+        </Styles.Header>
+        <Styles.Footer>
+          <Styles.Age>{age}</Styles.Age>
+          <Gender />
+        </Styles.Footer>
+      </Styles.RightSide>
     </Styles.Container>
   );
 };
 
-export default Index;
+export default Card;

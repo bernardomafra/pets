@@ -3,6 +3,6 @@ import {SvgProps} from 'react-native-svg';
 
 export type Category = {
   label: string;
-  name: string;
+  petType: string;
   icon?: React.FC<SvgProps>;
 };

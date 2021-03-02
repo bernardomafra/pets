@@ -7,6 +7,7 @@ import {StyleSheet} from 'react-native';
 import Badge from '../Badge';
 
 import * as Types from './types';
+import Card from '../Card';
 
 const Body: React.FC = () => {
   const [search, setSearch] = React.useState<string>('');
@@ -33,15 +34,22 @@ const Body: React.FC = () => {
         {categories.map((c) => {
           return (
             <Badge
-              key={c.name}
-              name={c.name}
+              key={c.petType}
+              petType={c.petType}
               label={c.label}
-              selected={category === c.name}
-              onClickAction={() => setCategory(c.name)}
+              selected={category === c.petType}
+              onClickAction={() => setCategory(c.petType)}
             />
           );
         })}
       </Styles.Categories>
+      <Card
+        petType="dog"
+        title="Buddy"
+        subtitle="Shiba Inu"
+        age="1 Year old"
+        gender="boy"
+      />
     </>
   );
 };

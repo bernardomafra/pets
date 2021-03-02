@@ -1,19 +1,19 @@
 import React from 'react';
 import * as Styles from './styles';
-import {getIconSvgByName} from '../../utils';
+import {getIconSvgByPetType} from '../../utils';
 
-import {BadgeProps} from './types';
+import * as Types from './types';
 
-const Badge: React.FC<BadgeProps> = ({
-  name,
+const Badge: React.FC<Types.BadgeProps> = ({
+  petType,
   label,
   selected = false,
   onClickAction,
-}: BadgeProps) => {
+}) => {
   let Icon = null;
 
-  if (name) {
-    Icon = getIconSvgByName(name);
+  if (petType) {
+    Icon = getIconSvgByPetType(petType);
   }
 
   return (
