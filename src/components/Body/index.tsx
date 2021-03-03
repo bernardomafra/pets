@@ -25,7 +25,7 @@ const Body: React.FC = () => {
     <>
       <Styles.SearchBar style={sheet.searchContainer}>
         <Styles.IputBar onChangeText={(text) => setSearch(text)} />
-        {/* <SearchIcon /> */}
+        <SearchIcon />
         <Styles.SearchText>
           {!search && 'Search pet to adopt'}
         </Styles.SearchText>
