@@ -1,0 +1,18 @@
+{
+	"React Stateless": {
+		"scope": "javascript,typescript,typescriptreact",
+		"prefix": "tsx",
+		"body": [
+			"import React from 'react';",
+			"",
+			"// import * as Styles from './styles';",
+			" ",
+			"const ${TM_DIRECTORY/^.+\\/(.*)$/$1/} = () => {",
+			"  return <h1>Hello World$0</h1>;",
+			"};",
+			" ",
+			"export default ${TM_DIRECTORY/^.+\\/(.*)$/$1/};"
+		],
+		"description": "Create React Function Component Stateless"
+	},
+}
