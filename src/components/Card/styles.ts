@@ -47,6 +47,8 @@ export const RightSide = styled.View`
   justify-content: space-between;
   border: 1px solid red;
 
+  padding: 10px 0px;
+
   height: 100%;
   flex: 1;
 `;
@@ -57,7 +59,6 @@ export const Title = styled.Text`
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  margin-top: 16px;
 
   letter-spacing: 0.15px;
 `;
