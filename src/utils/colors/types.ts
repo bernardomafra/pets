@@ -1,5 +1,5 @@
-import {ColorValue} from 'react-native';
-
 export type CardGenderColorsMap = {
-  [key: string]: ColorValue;
+  [key: string]: string;
 };
+
+export type GetCardGenderColorByGenderReturn = string;
