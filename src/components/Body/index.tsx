@@ -5,9 +5,9 @@ import SearchIcon from '../../assets/search-icon.svg';
 import {StyleSheet} from 'react-native';
 
 import Badge from '../Badge';
+import List from '../List';
 
 import * as Types from './types';
-import Card from '../Card';
 
 const Body: React.FC = () => {
   const [search, setSearch] = React.useState<string>('');
@@ -43,21 +43,27 @@ const Body: React.FC = () => {
           );
         })}
       </Styles.Categories>
-      <Card
-        petType="dog"
-        title="Buddy"
-        subtitle="Shiba Inu"
-        age="1 Year old"
-        gender="boy"
-      />
+      <List />
     </>
   );
 };
 
 const sheet = StyleSheet.create({
   searchContainer: {
-    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 2,
   },
+  listContainer: {
+    flex: 1,
+    backgroundColor: '#F4F',
+  },
+  itemView: {},
 });
 
 export default Body;
