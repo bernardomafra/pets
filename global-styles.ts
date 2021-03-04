@@ -5,6 +5,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const Screen = styled.View`
-  height: 100%;
+  /* height: 100%; */
+  flex: 1;
   background-color: #fff;
 `;
