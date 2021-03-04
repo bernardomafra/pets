@@ -4,6 +4,7 @@ export type CardProps = {
   subtitle: string;
   age: string;
   gender: string;
+  photoSource: any;
 };
 
 export type CardStyleRowProps = {
