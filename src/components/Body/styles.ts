@@ -14,7 +14,9 @@ export const SearchBar = styled.View`
   position: relative;
 `;
 
-export const IputBar = styled.TextInput`
+export const InputBar = styled.TextInput`
+  z-index: 1000;
+
   position: absolute;
   background-color: transparent;
   width: 100%;
