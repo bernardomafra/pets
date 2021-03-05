@@ -3,7 +3,7 @@
 **Credits**: http://www.uplabs.com/posts/pet-adoption-app-concept
 
 ### Screenshots
-![](./public/print-all.jpeg) ![](./public/print-cats.jpeg)
+<img width="300px" src="./public/print-all.jpeg"> | <img width="300px" src="./public/print-cats.jpeg">
 
 
 ---
