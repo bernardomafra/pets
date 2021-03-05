@@ -5,7 +5,7 @@ import CustomStatusBar from './src/components/CustomStatusBar';
 import Header from './src/components/Header';
 import Body from './src/components/Body';
 
-import './mock-server';
+import './src/infra/api/server';
 
 const App = () => {
   return (
