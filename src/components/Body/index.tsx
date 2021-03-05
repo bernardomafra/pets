@@ -1,25 +1,43 @@
 import React from 'react';
-
-import * as Styles from './styles';
-import SearchIcon from '../../assets/search-icon.svg';
 import {StyleSheet} from 'react-native';
 
-import Badge from '../Badge';
+import SearchIcon from '../../assets/search-icon.svg';
 
+import CategoryService from '../../infra/services/category';
+
+import Badge from '../Badge';
+import List from '../List';
+
+import * as Styles from './styles';
 import * as Types from './types';
-import Card from '../Card';
 
 const Body: React.FC = () => {
   const [search, setSearch] = React.useState<string>('');
   const [category, setCategory] = React.useState<string>('all');
   const [categories, setCategories] = React.useState<Types.Category[]>([]);
+  const [pets, setPets] = React.useState<any[]>([]);
 
   React.useEffect(() => {
-    fetch('/api/categories')
-      .then((res) => res.json())
-      .then((json) => setCategories(json))
-      .catch((err) => console.log('Error while fetch categories: ', err));
+    async function loadCategories() {
+      const response = await CategoryService.getAllCategories();
+      if (response) {
+        setCategories(response);
+      }
+    }
+
+    loadCategories();
   }, []);
+
+  React.useEffect(() => {
+    async function loadCategory() {
+      const response = await CategoryService.getCategoryByName(category);
+      if (response) {
+        setPets(response);
+      }
+    }
+
+    loadCategory();
+  }, [category]);
 
   return (
     <>
@@ -43,20 +61,21 @@ const Body: React.FC = () => {
           );
         })}
       </Styles.Categories>
-      <Card
-        petType="dog"
-        title="Buddy"
-        subtitle="Shiba Inu"
-        age="1 Year old"
-        gender="boy"
-      />
+      {pets && <List data={pets} />}
     </>
   );
 };
 
 const sheet = StyleSheet.create({
   searchContainer: {
-    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.23,
+    shadowRadius: 2.62,
+    elevation: 2,
   },
 });
 

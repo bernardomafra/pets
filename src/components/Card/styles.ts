@@ -6,11 +6,11 @@ export const Container = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* border: 1px solid green; */
-  margin-top: 21px;
+  margin: 40px 0px;
   border-radius: 24px;
   height: 120px;
   background-color: #fff;
+  width: 98%;
 `;
 
 export const Column = styled.View`
@@ -26,7 +26,6 @@ export const Row = styled.View`
   align-items: ${(props: Types.CardStyleRowProps) => props.align || 'center'};
   justify-content: ${(props: Types.CardStyleRowProps) =>
     props.justify || 'space-between'};
-  border: 1px solid yellow;
   margin: 0px 16px;
   width: ${(props: Types.CardStyleRowProps) =>
     props.width ? `${props.width}px` : 'auto'};
@@ -34,18 +33,20 @@ export const Row = styled.View`
 
 export const Photo = styled.Image``;
 
-export const LeftSide = styled.View`
-  width: 50%;
+export const PhotoContainer = styled.View`
+  width: 160px;
+  height: 160px;
 `;
 
-export const Footer = styled.View``;
+export const LeftSide = styled.View`
+  width: 45%;
+`;
 
 export const RightSide = styled.View`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  border: 1px solid red;
 
   padding: 10px 0px;
 
@@ -59,6 +60,8 @@ export const Title = styled.Text`
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
+
+  max-width: 75%;
 
   letter-spacing: 0.15px;
 `;

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Image, StyleSheet} from 'react-native';
-import {getIconSvgByPetType, getGenderSvgByName} from '../../utils';
+import {StyleSheet} from 'react-native';
+import * as Utils from '../../utils';
 
 import * as Styles from './styles';
 
@@ -12,22 +12,25 @@ const Card: React.FC<Types.CardProps> = ({
   subtitle,
   age,
   gender,
+  photoSource,
 }) => {
-  const Icon = getIconSvgByPetType(petType);
-  const Gender = getGenderSvgByName(gender);
+  const Icon = Utils.getIconSvgByPetType(petType);
+  const Gender = Utils.getGenderSvgByName(gender);
 
   return (
     <Styles.Container style={sheet.card}>
       <Styles.LeftSide>
-        {/* <Styles.Photo source={require('../../assets/buddy.png')} /> */}
+        <Styles.PhotoContainer>
+          <Styles.Photo source={photoSource} />
+        </Styles.PhotoContainer>
       </Styles.LeftSide>
       <Styles.RightSide>
         <Styles.Column>
-          <Styles.Row width={150}>
+          <Styles.Row width={160}>
             <Styles.Title>{title}</Styles.Title>
             {Icon && <Icon fill="#C4C4C4" />}
           </Styles.Row>
-          <Styles.Row width={150}>
+          <Styles.Row width={160}>
             <Styles.Subtitle>{subtitle}</Styles.Subtitle>
           </Styles.Row>
         </Styles.Column>
@@ -35,8 +38,8 @@ const Card: React.FC<Types.CardProps> = ({
           <Styles.Age>{age}</Styles.Age>
           <Styles.Dot />
           <Gender />
-          <Styles.Gender color="#F46546">
-            {gender.charAt(0).toUpperCase()}
+          <Styles.Gender color={Utils.getCardGenderColorByGender(gender)}>
+            {Utils.getStringCapitalized(gender)}
           </Styles.Gender>
         </Styles.Row>
       </Styles.RightSide>
@@ -53,7 +56,7 @@ const sheet = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-    elevation: 4,
+    elevation: 2,
   },
 });
 
