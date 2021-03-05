@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Keyboard} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import SearchIcon from '../../assets/search-icon.svg';
 
@@ -16,7 +16,7 @@ const Body: React.FC = () => {
   const [search, setSearch] = React.useState<string>('');
   const [category, setCategory] = React.useState<string>('all');
   const [categories, setCategories] = React.useState<Types.Category[]>([]);
-  const [pets, setPets] = React.useState<Types.Category[]>([]);
+  const [pets, setPets] = React.useState<Types.CardProps[]>([]);
 
   React.useEffect(() => {
     async function loadCategories() {
