@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.SafeAreaView`
-  margin: 29px 19px 0px;
+  margin: 0px 19px;
 `;
 
 export const Screen = styled.View`
