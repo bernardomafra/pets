@@ -10,6 +10,7 @@ export const Container = styled.View`
   border-radius: 24px;
   height: 120px;
   background-color: #fff;
+  width: 98%;
 `;
 
 export const Column = styled.View`
@@ -38,7 +39,7 @@ export const PhotoContainer = styled.View`
 `;
 
 export const LeftSide = styled.View`
-  width: 50%;
+  width: 45%;
 `;
 
 export const RightSide = styled.View`
@@ -59,6 +60,8 @@ export const Title = styled.Text`
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
+
+  max-width: 75%;
 
   letter-spacing: 0.15px;
 `;

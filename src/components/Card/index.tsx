@@ -6,8 +6,6 @@ import * as Styles from './styles';
 
 import * as Types from './types';
 
-import Test from '../../assets/buddy.svg';
-
 const Card: React.FC<Types.CardProps> = ({
   petType,
   title,
@@ -28,11 +26,11 @@ const Card: React.FC<Types.CardProps> = ({
       </Styles.LeftSide>
       <Styles.RightSide>
         <Styles.Column>
-          <Styles.Row width={150}>
+          <Styles.Row width={160}>
             <Styles.Title>{title}</Styles.Title>
             {Icon && <Icon fill="#C4C4C4" />}
           </Styles.Row>
-          <Styles.Row width={150}>
+          <Styles.Row width={160}>
             <Styles.Subtitle>{subtitle}</Styles.Subtitle>
           </Styles.Row>
         </Styles.Column>
