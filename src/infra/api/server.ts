@@ -11,8 +11,16 @@ window.server = createServer({
     this.get('/api/categories', () => CategoriesRoutes.getAllTypes());
 
     this.get(
-      '/api/categories/:category',
+      '/api/pets/category/:category',
       (_, req) => PetsRoutes.getByCategory(req.params.category),
+      {
+        timing: 1000,
+      },
+    );
+
+    this.get(
+      '/api/pets/name/:name',
+      (_, req) => PetsRoutes.getByName(req.params.name),
       {
         timing: 1000,
       },
