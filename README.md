@@ -4,8 +4,8 @@
 
 ### Screenshots
 
-<img src="./public/print-all.jpeg" />
-<img src="./public/print-cats.jpeg" />
+<img width="250px" src="./public/print-all.jpeg" >
+<img width="250px" src="./public/print-cats.jpeg" >
 
 ---
 
