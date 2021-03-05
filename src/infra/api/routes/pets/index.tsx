@@ -12,3 +12,9 @@ export const getByCategory = (
   }
   return pets.filter((pet) => pet.petType === category);
 };
+
+export const getByName = (name: string): Types.CategoryReturn => {
+  return pets.filter((pet) =>
+    pet.title.toLowerCase().match(name.toLowerCase()),
+  );
+};

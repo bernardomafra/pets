@@ -1,9 +1,10 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Keyboard} from 'react-native';
 
 import SearchIcon from '../../assets/search-icon.svg';
 
 import CategoryService from '../../infra/services/category';
+import PetsService from '../../infra/services/pets';
 
 import Badge from '../Badge';
 import List from '../List';
@@ -15,11 +16,11 @@ const Body: React.FC = () => {
   const [search, setSearch] = React.useState<string>('');
   const [category, setCategory] = React.useState<string>('all');
   const [categories, setCategories] = React.useState<Types.Category[]>([]);
-  const [pets, setPets] = React.useState<any[]>([]);
+  const [pets, setPets] = React.useState<Types.Category[]>([]);
 
   React.useEffect(() => {
     async function loadCategories() {
-      const response = await CategoryService.getAllCategories();
+      const response = await CategoryService.getAll();
       if (response) {
         setCategories(response);
       }
@@ -29,20 +30,33 @@ const Body: React.FC = () => {
   }, []);
 
   React.useEffect(() => {
-    async function loadCategory() {
-      const response = await CategoryService.getCategoryByName(category);
+    async function loadPets() {
+      const response = await PetsService.getByCategory(category);
       if (response) {
         setPets(response);
       }
     }
 
-    loadCategory();
+    loadPets();
   }, [category]);
+
+  React.useEffect(() => {
+    async function loadPets() {
+      if (search) {
+        const response = await PetsService.getByName(search);
+        if (response) {
+          setPets(response);
+        }
+      }
+    }
+
+    loadPets();
+  }, [search]);
 
   return (
     <>
       <Styles.SearchBar style={sheet.searchContainer}>
-        <Styles.IputBar onChangeText={(text) => setSearch(text)} />
+        <Styles.InputBar onChangeText={(text) => setSearch(text)} />
         <SearchIcon />
         <Styles.SearchText>
           {!search && 'Search pet to adopt'}
