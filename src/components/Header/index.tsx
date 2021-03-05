@@ -4,10 +4,14 @@ import * as Styles from './styles';
 import MapPin from '../../assets/map-pin.svg';
 import ArrowDown from '../../assets/arrow-down.svg';
 import HeaderDog from '../../assets/header-dog.svg';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Keyboard} from 'react-native';
 
 const Header: React.FC = () => {
   const [location, setLocation] = React.useState<String>('Sabará');
+  const [isKeyboardOpen, setIsKeyboardOpen] = React.useState<boolean>(false);
+
+  Keyboard.addListener('keyboardDidShow', () => setIsKeyboardOpen(true));
+  Keyboard.addListener('keyboardDidHide', () => setIsKeyboardOpen(false));
 
   return (
     <Styles.HeaderContainer>
@@ -17,18 +21,22 @@ const Header: React.FC = () => {
         <Styles.BigFont>{location}</Styles.BigFont>
         <ArrowDown />
       </Styles.Select>
-      <Styles.PremiumRow>
-        <Styles.PremiumContainer>
-          <Styles.PremiumTitle>Become premium with us</Styles.PremiumTitle>
-          <Styles.PremiumDescription>
-            Access more popular adopter and {'\n'}pets by upgrading to premium
-          </Styles.PremiumDescription>
-          <Styles.PremiumButton>
-            <Styles.PremiumButtonText>Become Premium</Styles.PremiumButtonText>
-          </Styles.PremiumButton>
-        </Styles.PremiumContainer>
-        <HeaderDog style={sheet.svg} />
-      </Styles.PremiumRow>
+      {!isKeyboardOpen && (
+        <Styles.PremiumRow>
+          <Styles.PremiumContainer>
+            <Styles.PremiumTitle>Become premium with us</Styles.PremiumTitle>
+            <Styles.PremiumDescription>
+              Access more popular adopter and {'\n'}pets by upgrading to premium
+            </Styles.PremiumDescription>
+            <Styles.PremiumButton>
+              <Styles.PremiumButtonText>
+                Become Premium
+              </Styles.PremiumButtonText>
+            </Styles.PremiumButton>
+          </Styles.PremiumContainer>
+          <HeaderDog style={sheet.svg} />
+        </Styles.PremiumRow>
+      )}
     </Styles.HeaderContainer>
   );
 };
