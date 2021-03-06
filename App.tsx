@@ -1,21 +1,16 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 
-import * as Styles from './global-styles';
-import CustomStatusBar from './src/components/CustomStatusBar';
-import Header from './src/components/Header';
-import Body from './src/components/Body';
-
+import AppProvider from './src/entry/context';
 import './src/infra/api/server';
+
+import Routes from './src/entry/routes';
 
 const App = () => {
   return (
-    <Styles.Screen>
-      <CustomStatusBar backgroundColor="#FFF" barStyle="dark-content" />
-      <Styles.Container>
-        <Header />
-        <Body />
-      </Styles.Container>
-    </Styles.Screen>
+    <AppProvider>
+      <Routes />
+    </AppProvider>
   );
 };
 

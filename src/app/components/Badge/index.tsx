@@ -1,6 +1,6 @@
 import React from 'react';
 import * as Styles from './styles';
-import {getIconSvgByPetType} from '../../utils';
+import {getIconSvgByPetType} from '../../../entry/utils';
 
 import * as Types from './types';
 

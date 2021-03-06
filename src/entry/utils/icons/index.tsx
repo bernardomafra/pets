@@ -1,9 +1,9 @@
-import Paw from '../../assets/paw.svg';
-import Cat from '../../assets/cat.svg';
-import Dog from '../../assets/dog.svg';
-import Bird from '../../assets/bird.svg';
-import Boy from '../../assets/boy.svg';
-import Girl from '../../assets/girl.svg';
+import Paw from '../../../app/assets/paw.svg';
+import Cat from '../../../app/assets/cat.svg';
+import Dog from '../../../app/assets/dog.svg';
+import Bird from '../../../app/assets/bird.svg';
+import Boy from '../../../app/assets/boy.svg';
+import Girl from '../../../app/assets/girl.svg';
 
 import * as Types from './types';
 

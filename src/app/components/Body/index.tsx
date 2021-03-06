@@ -3,8 +3,8 @@ import {StyleSheet} from 'react-native';
 
 import SearchIcon from '../../assets/search-icon.svg';
 
-import CategoryService from '../../infra/services/category';
-import PetsService from '../../infra/services/pets';
+import CategoryService from '../../../infra/services/category';
+import PetsService from '../../../infra/services/pets';
 
 import Badge from '../Badge';
 import List from '../List';

@@ -1,12 +1,14 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import * as Utils from '../../utils';
+import * as Utils from '../../../entry/utils';
 
 import * as Styles from './styles';
 
 import * as Types from './types';
+import {AppContext} from '../../../entry/context';
 
 const Card: React.FC<Types.CardProps> = ({
+  id,
   petType,
   title,
   subtitle,
@@ -17,8 +19,10 @@ const Card: React.FC<Types.CardProps> = ({
   const Icon = Utils.getIconSvgByPetType(petType);
   const Gender = Utils.getGenderSvgByName(gender);
 
+  const {changePageFunction} = React.useContext(AppContext);
+
   return (
-    <Styles.Container style={sheet.card}>
+    <Styles.Container style={sheet.card} onPress={() => changePageFunction(id)}>
       <Styles.LeftSide>
         <Styles.PhotoContainer>
           <Styles.Photo source={photoSource} />

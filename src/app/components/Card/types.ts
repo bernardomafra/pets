@@ -1,4 +1,5 @@
 export type CardProps = {
+  id: string;
   petType: string;
   title: string;
   subtitle: string;

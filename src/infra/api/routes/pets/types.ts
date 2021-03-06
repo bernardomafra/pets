@@ -1,4 +1,4 @@
-import {CardProps} from '../../../../components/Card/types';
+import {CardProps} from '../../../../app/components/Card/types';
 
 export type Category = string | 'all' | 'cat' | 'dog' | 'bird';
 
