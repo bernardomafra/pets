@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, View, StyleSheet, Image} from 'react-native';
 
+import * as GlobalStyles from '../../../../global-styles';
+
 import * as Types from './types';
 import Card from '../../components/Card';
 
@@ -12,22 +14,24 @@ const Info = ({route}: Types.InfoPageProps) => {
   }, [route]);
 
   return (
-    <View style={sheet.container}>
-      <Image
-        style={sheet.image}
-        source={require('../../assets/big-buddy.png')}
-      />
-      <Card
-        id={route.params.petId}
-        photoSource={undefined}
-        petType={'dog'}
-        title={'Buddy'}
-        subtitle={'Shiba Inu'}
-        age={'1 Year old'}
-        gender={'boy'}
-      />
-      <Text>{route.params.petId}</Text>
-    </View>
+    <GlobalStyles.Container>
+      <View style={sheet.container}>
+        <Image
+          style={sheet.image}
+          source={require('../../assets/big-buddy.png')}
+        />
+        <Card
+          id={route.params.petId}
+          photoSource={undefined}
+          petType={'dog'}
+          title={'Buddy'}
+          subtitle={'Shiba Inu'}
+          age={'1 Year old'}
+          gender={'boy'}
+        />
+        <Text>{route.params.petId}</Text>
+      </View>
+    </GlobalStyles.Container>
   );
 };
 
@@ -36,10 +40,7 @@ const sheet = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
   },
-  image: {
-    height: 375,
-    width: '100%',
-  },
+  image: {},
 });
 
 export default Info;

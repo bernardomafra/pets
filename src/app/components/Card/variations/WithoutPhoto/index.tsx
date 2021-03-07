@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as CommonStyles from '../../styles';
+import * as Styles from './styles';
 import sheet from '../../sheet';
 
 import * as Types from './types';
@@ -13,21 +14,20 @@ const WithoutPhoto = ({
   Gender,
 }: Types.CardWithoutPhotoProps) => {
   return (
-    <CommonStyles.Container style={sheet.boxShadow}>
-      <CommonStyles.Column>
-        <CommonStyles.Row width={160}>
+    <CommonStyles.Container direction="column" style={sheet.boxShadow}>
+      <Styles.RowGroup>
+        <CommonStyles.Row spaced>
           <CommonStyles.Title>{title}</CommonStyles.Title>
-          {Icon && <Icon fill="#C4C4C4" />}
+          <Gender />
         </CommonStyles.Row>
-        <CommonStyles.Row width={160}>
+        <CommonStyles.Row spaced>
+          {Icon && <Icon fill="#C4C4C4" />}
           <CommonStyles.Subtitle>{subtitle}</CommonStyles.Subtitle>
         </CommonStyles.Row>
-      </CommonStyles.Column>
-      <CommonStyles.Row justify="space-between">
-        <CommonStyles.Age>{age}</CommonStyles.Age>
-        <CommonStyles.Dot />
-        <Gender />
-      </CommonStyles.Row>
+        <CommonStyles.Row spaced>
+          <CommonStyles.Age>{age}</CommonStyles.Age>
+        </CommonStyles.Row>
+      </Styles.RowGroup>
     </CommonStyles.Container>
   );
 };

@@ -24,8 +24,13 @@ export type CardStyleRowProps = {
   justify?: 'space-between' | 'center' | 'space-around' | 'space-evenly';
   align?: 'center' | 'flex-start' | 'flex-end';
   width?: Number;
+  spaced?: boolean;
 };
 
 export type CardStyleGenderProps = {
   color: string;
+};
+
+export type CardStyleContainerProps = {
+  direction?: 'row' | 'column';
 };

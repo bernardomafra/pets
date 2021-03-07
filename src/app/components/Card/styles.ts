@@ -4,7 +4,8 @@ import * as Types from './types';
 
 export const Container = styled.TouchableOpacity`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props: Types.CardStyleContainerProps) =>
+    props.direction || 'row'};
   align-items: center;
   border-radius: 24px;
   height: 120px;
@@ -17,6 +18,7 @@ export const Column = styled.View`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  flex: 1;
 `;
 
 export const Row = styled.View`
@@ -25,9 +27,11 @@ export const Row = styled.View`
   align-items: ${(props: Types.CardStyleRowProps) => props.align || 'center'};
   justify-content: ${(props: Types.CardStyleRowProps) =>
     props.justify || 'space-between'};
-  margin: 0px 16px;
-  width: ${(props: Types.CardStyleRowProps) =>
-    props.width ? `${props.width}px` : 'auto'};
+  padding: ${(props: Types.CardStyleRowProps) =>
+    props.spaced ? '0px 16px' : '0'};
+  flex: 1;
+
+  width: 100%;
 `;
 
 export const Photo = styled.Image``;
@@ -48,6 +52,7 @@ export const RightSide = styled.View`
   justify-content: space-between;
 
   padding: 10px 0px;
+  max-width: 55%;
 
   height: 100%;
 `;
@@ -58,8 +63,6 @@ export const Title = styled.Text`
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-
-  max-width: 75%;
 
   letter-spacing: 0.15px;
 `;
@@ -87,7 +90,6 @@ export const Dot = styled.View`
   height: 5px;
   background-color: #000;
   border-radius: 50px;
-  margin: 0px 8px;
 `;
 
 export const Gender = styled.Text`
@@ -100,4 +102,17 @@ export const Gender = styled.Text`
   letter-spacing: 0.4px;
 
   color: ${(props: Types.CardStyleGenderProps) => props.color || '#C4C4C4'};
+`;
+
+export const SmallRow = styled.View`
+  display: flex;
+  flex-direction: row;
+  align-items: ${(props: Types.CardStyleRowProps) => props.align || 'center'};
+  justify-content: ${(props: Types.CardStyleRowProps) =>
+    props.justify || 'space-between'};
+  padding: ${(props: Types.CardStyleRowProps) =>
+    props.spaced ? '0px 16px' : '0'};
+  flex: 1;
+
+  width: 80%;
 `;

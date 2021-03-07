@@ -4,6 +4,7 @@ import * as CommonStyles from '../../styles';
 import sheet from '../../sheet';
 
 import * as Types from './types';
+import {View} from 'react-native';
 
 const WithPhoto = ({
   id,
@@ -27,23 +28,21 @@ const WithPhoto = ({
         )}
       </CommonStyles.LeftSide>
       <CommonStyles.RightSide>
-        <CommonStyles.Column>
-          <CommonStyles.Row width={160}>
-            <CommonStyles.Title>{title}</CommonStyles.Title>
-            {Icon && <Icon fill="#C4C4C4" />}
-          </CommonStyles.Row>
-          <CommonStyles.Row width={160}>
-            <CommonStyles.Subtitle>{subtitle}</CommonStyles.Subtitle>
-          </CommonStyles.Row>
-        </CommonStyles.Column>
-        <CommonStyles.Row justify="space-between">
+        <CommonStyles.Row spaced justify="space-between">
+          <CommonStyles.Title>{title}</CommonStyles.Title>
+          {Icon && <Icon fill="#C4C4C4" />}
+        </CommonStyles.Row>
+        <CommonStyles.Row spaced>
+          <CommonStyles.Subtitle>{subtitle}</CommonStyles.Subtitle>
+        </CommonStyles.Row>
+        <CommonStyles.SmallRow spaced justify="space-between">
           <CommonStyles.Age>{age}</CommonStyles.Age>
           <CommonStyles.Dot />
           <Gender />
           <CommonStyles.Gender color={genderColor}>
             {genderCapitalized}
           </CommonStyles.Gender>
-        </CommonStyles.Row>
+        </CommonStyles.SmallRow>
       </CommonStyles.RightSide>
     </CommonStyles.Container>
   );

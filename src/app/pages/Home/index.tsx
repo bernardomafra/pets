@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as Styles from './styles';
+import * as GlobalStyles from '../../../../global-styles';
 
 import AppProvider from '../../../entry/context';
 
@@ -13,10 +14,10 @@ const Home = () => {
     <AppProvider>
       <Styles.Screen>
         <CustomStatusBar backgroundColor="#FFF" barStyle="dark-content" />
-        <Styles.Container>
+        <GlobalStyles.Container>
           <Header />
           <Body />
-        </Styles.Container>
+        </GlobalStyles.Container>
       </Styles.Screen>
     </AppProvider>
   );
