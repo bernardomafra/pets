@@ -15,7 +15,7 @@ const routesMap: Types.IRouteMap[] = [
     key: 'info',
     name: 'Info',
     title: 'More information',
-    headerShown: true,
+    headerShown: false,
     component: Info,
     initialParams: {petId: 0},
   },
