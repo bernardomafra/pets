@@ -15,6 +15,8 @@ export const Badge = styled.TouchableOpacity`
 `;
 
 export const BadgeText = styled.Text`
+  font-family: 'MontserratAlternates-Medium';
+  font-size: 17px;
   color: ${(props: Types.BadgeStyleProps) =>
     props.selected ? '#FFF' : '#777777'};
 `;
