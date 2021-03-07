@@ -16,7 +16,10 @@ const Routes = () => {
             key={route.key}
             name={route.name}
             component={route.component}
-            options={{title: route.title}}
+            options={{
+              title: route.title || route.name,
+              headerShown: route.headerShown,
+            }}
             initialParams={route.initialParams}
           />
         ))}

@@ -6,6 +6,7 @@ import * as Styles from './styles';
 
 import * as Types from './types';
 import {AppContext} from '../../../entry/context';
+import {useNavigation} from '@react-navigation/native';
 
 const Card: React.FC<Types.CardProps> = ({
   id,
@@ -19,10 +20,15 @@ const Card: React.FC<Types.CardProps> = ({
   const Icon = Utils.getIconSvgByPetType(petType);
   const Gender = Utils.getGenderSvgByName(gender);
 
-  const {changePageFunction} = React.useContext(AppContext);
+  const navigation = useNavigation();
+
+  const viewPetInfo = (petId: number) => {
+    console.log(navigation);
+    navigation?.navigate('Info', {petId});
+  };
 
   return (
-    <Styles.Container style={sheet.card} onPress={() => changePageFunction(id)}>
+    <Styles.Container style={sheet.card} onPress={() => viewPetInfo(id)}>
       <Styles.LeftSide>
         <Styles.PhotoContainer>
           <Styles.Photo source={photoSource} />

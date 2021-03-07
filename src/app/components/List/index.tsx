@@ -10,6 +10,7 @@ import * as Types from './types';
 const List: React.FC<Types.ListProps> = ({data}) => {
   const renderItem: Types.ListRenderItemReturn = ({item}) => (
     <Card
+      id={item.id}
       photoSource={item.photoSource}
       petType={item.petType}
       title={item.title}

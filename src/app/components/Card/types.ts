@@ -1,5 +1,5 @@
 export type CardProps = {
-  id: string;
+  id: number;
   petType: string;
   title: string;
   subtitle: string;
@@ -17,3 +17,5 @@ export type CardStyleRowProps = {
 export type CardStyleGenderProps = {
   color: string;
 };
+
+export type {StackProps} from '../../../entry/routes/types';

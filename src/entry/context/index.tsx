@@ -2,22 +2,17 @@ import React from 'react';
 
 import * as Types from './types';
 
-export const AppContext = React.createContext<Types.AppContextProps>({
-  changePageFunction: (petId) => console.log(petId),
-  setChangePageFunction: () => {},
+export const AppContext = React.createContext<Types.IAppContext>({
+  navigation: undefined,
 });
 
 const AppProvider = ({children}: Types.AppProviderProps) => {
-  const [
-    changePageFunction,
-    setChangePageFunction,
-  ] = React.useState<Types.ViewPetFunctionType>(() => {});
+  // const reactNavigation = useNavigation<Types.StackProps>();
 
   return (
     <AppContext.Provider
       value={{
-        changePageFunction,
-        setChangePageFunction,
+        navigation: undefined,
       }}>
       {children}
     </AppContext.Provider>
