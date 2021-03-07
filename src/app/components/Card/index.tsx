@@ -5,7 +5,6 @@ import * as Utils from '../../../entry/utils';
 import * as Styles from './styles';
 
 import * as Types from './types';
-import {AppContext} from '../../../entry/context';
 import {useNavigation} from '@react-navigation/native';
 
 const Card: React.FC<Types.CardProps> = ({

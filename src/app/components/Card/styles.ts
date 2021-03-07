@@ -6,7 +6,6 @@ export const Container = styled.TouchableOpacity`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 40px 0px;
   border-radius: 24px;
   height: 120px;
   background-color: #fff;
@@ -51,7 +50,6 @@ export const RightSide = styled.View`
   padding: 10px 0px;
 
   height: 100%;
-  flex: 1;
 `;
 
 export const Title = styled.Text`
