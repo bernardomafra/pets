@@ -1,5 +1,5 @@
 import React from 'react';
-import {StackNavigationProp} from '@react-navigation/stack';
+import {StackNavigationProp, StackScreenProps} from '@react-navigation/stack';
 
 // routes
 interface IInfoParams {
@@ -8,7 +8,7 @@ interface IInfoParams {
 
 export type StackRouteList = {
   Home: undefined;
-  Info: IInfoParams;
+  Info: {petId: number};
 };
 
 type Routes = 'Home' | 'Info';
@@ -23,7 +23,10 @@ export interface IRouteMap {
   component: React.FunctionComponent<any>;
 }
 
-// screen
+// navigation
 export type HomeNavigationProp = StackNavigationProp<StackRouteList, 'Home'>;
 export type InfoNavigationProp = StackNavigationProp<StackRouteList, 'Info'>;
 export type StackProps = HomeNavigationProp | InfoNavigationProp;
+
+// screen
+export type InfoScreenProps = StackScreenProps<StackRouteList, 'Info'>;

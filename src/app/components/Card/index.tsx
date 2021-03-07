@@ -21,10 +21,7 @@ const Card: React.FC<Types.CardProps> = ({
 
   const navigation = useNavigation();
 
-  const viewPetInfo = (petId: number) => {
-    console.log(navigation);
-    navigation?.navigate('Info', {petId});
-  };
+  const viewPetInfo = (petId: number) => navigation?.navigate('Info', {petId});
 
   return (
     <Styles.Container style={sheet.card} onPress={() => viewPetInfo(id)}>
