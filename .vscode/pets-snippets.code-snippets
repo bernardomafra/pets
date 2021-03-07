@@ -4,11 +4,13 @@
 		"prefix": "tsx",
 		"body": [
 			"import React from 'react';",
+			" ",
+			"import {Text} from 'react-native';",
 			"",
 			"// import * as Styles from './styles';",
 			" ",
 			"const ${TM_DIRECTORY/^.+\\/(.*)$/$1/} = () => {",
-			"  return <h1>Hello World$0</h1>;",
+			"  return <Text>Hello World$0</Text>;",
 			"};",
 			" ",
 			"export default ${TM_DIRECTORY/^.+\\/(.*)$/$1/};"
