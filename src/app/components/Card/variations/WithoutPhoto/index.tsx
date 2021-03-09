@@ -20,7 +20,7 @@ const WithoutPhoto = ({
           <CommonStyles.Title>{title}</CommonStyles.Title>
           <Gender />
         </CommonStyles.Row>
-        <CommonStyles.Row spaced>
+        <CommonStyles.Row width="35%" spaced justify="space-between">
           {Icon && <Icon fill="#C4C4C4" />}
           <CommonStyles.Subtitle>{subtitle}</CommonStyles.Subtitle>
         </CommonStyles.Row>
