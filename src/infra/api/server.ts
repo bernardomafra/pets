@@ -22,7 +22,15 @@ window.server = createServer({
       '/api/pets/name/:name',
       (_, req) => PetsRoutes.getByName(req.params.name),
       {
-        timing: 1000,
+        timing: 100,
+      },
+    );
+
+    this.get(
+      '/api/pets/id/:id',
+      (_, req) => PetsRoutes.getById(req.params.id),
+      {
+        timing: 100,
       },
     );
   },
