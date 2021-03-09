@@ -23,7 +23,7 @@ export type CommonCardProps = Omit<CardProps, NonCommon> & {
 export type CardStyleRowProps = {
   justify?: 'space-between' | 'center' | 'space-around' | 'space-evenly';
   align?: 'center' | 'flex-start' | 'flex-end';
-  width?: Number;
+  width?: string;
   spaced?: boolean;
 };
 
@@ -33,4 +33,8 @@ export type CardStyleGenderProps = {
 
 export type CardStyleContainerProps = {
   direction?: 'row' | 'column';
+};
+
+export type CardStylePhotoProps = {
+  backgroundColor: string;
 };

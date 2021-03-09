@@ -6,6 +6,7 @@ export type CardWithPhotoProps = {
   genderCapitalized: string;
   genderColor: string;
   photoSource?: ImageSourcePropType;
+  photoBackgroundColor: string;
   id: number;
   common: CommonCardProps;
 };

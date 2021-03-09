@@ -21,14 +21,21 @@ const Card: React.FC<Types.CardProps> = ({
 
   const navigation = useNavigation();
 
-  const viewPetInfo = (petId: number) => navigation?.navigate('Info', {petId});
   const genderColor = Utils.getCardGenderColorByGender(gender);
   const genderCapitalized = Utils.getStringCapitalized(gender);
+  const photoBackgroundColor = Utils.getRandomColor();
+
+  const viewPetInfo = (petId: number) =>
+    navigation?.navigate('Info', {
+      petId,
+      headerBackgroundColor: photoBackgroundColor,
+    });
 
   const commonProps = {
     title,
     subtitle,
     age,
+    photoBackgroundColor,
     Icon,
     Gender,
   };
@@ -41,6 +48,7 @@ const Card: React.FC<Types.CardProps> = ({
       photoSource={photoSource}
       genderCapitalized={genderCapitalized}
       viewPetInfo={viewPetInfo}
+      photoBackgroundColor={photoBackgroundColor}
     />
   ) : (
     <WithoutPhoto {...commonProps} />

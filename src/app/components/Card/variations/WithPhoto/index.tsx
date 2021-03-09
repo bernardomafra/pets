@@ -4,7 +4,6 @@ import * as CommonStyles from '../../styles';
 import sheet from '../../sheet';
 
 import * as Types from './types';
-import {View} from 'react-native';
 
 const WithPhoto = ({
   id,
@@ -12,6 +11,7 @@ const WithPhoto = ({
   genderCapitalized,
   photoSource,
   genderColor,
+  photoBackgroundColor,
   common,
 }: Types.CardWithPhotoProps) => {
   const {title, subtitle, age, Icon, Gender} = common;
@@ -22,7 +22,7 @@ const WithPhoto = ({
       onPress={() => viewPetInfo(id)}>
       <CommonStyles.LeftSide>
         {photoSource && (
-          <CommonStyles.PhotoContainer>
+          <CommonStyles.PhotoContainer backgroundColor={photoBackgroundColor}>
             <CommonStyles.Photo source={photoSource} />
           </CommonStyles.PhotoContainer>
         )}

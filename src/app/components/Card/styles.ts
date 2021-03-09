@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 import * as Types from './types';
 
-export const Container = styled.TouchableOpacity`
+export const Container = styled.Pressable`
   display: flex;
   flex-direction: ${(props: Types.CardStyleContainerProps) =>
     props.direction || 'row'};
@@ -31,7 +31,7 @@ export const Row = styled.View`
     props.spaced ? '0px 16px' : '0'};
   flex: 1;
 
-  width: 100%;
+  width: ${(props: Types.CardStyleRowProps) => props.width || '100%'};
 `;
 
 export const Photo = styled.Image``;
@@ -39,6 +39,9 @@ export const Photo = styled.Image``;
 export const PhotoContainer = styled.View`
   width: 160px;
   height: 160px;
+  background-color: ${(props: Types.CardStylePhotoProps) =>
+    props.backgroundColor || '#FFF'};
+  border-radius: 24px;
 `;
 
 export const LeftSide = styled.View`
