@@ -1,46 +1,73 @@
 import React from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
+import {Text} from 'react-native';
 
+import {AppContext} from '../../../entry/context';
+
+import * as Styles from './styles';
 import * as GlobalStyles from '../../../../global-styles';
 
 import * as Types from './types';
-import Card from '../../components/Card';
 
-// import * as Styles from './styles';
+import Card from '../../components/Card';
+import CustomStatusBar from '../../components/CustomStatusBar';
+import ArrowLeft from '../../assets/arrow-left.svg';
+
+import PetsService from '../../../infra/services/pets';
+import {useNavigation} from '@react-navigation/native';
 
 const Info = ({route}: Types.InfoPageProps) => {
+  const {petId, headerBackgroundColor} = route?.params;
+  const [pet, setPet] = React.useState<Types.CardProps>();
+  const navigation = useNavigation();
+
   React.useEffect(() => {
-    console.log(route.params);
-  }, [route]);
+    async function loadPet() {
+      if (petId) {
+        const response = await PetsService.getById(petId);
+        if (response) {
+          setPet(response);
+        }
+      }
+    }
+
+    loadPet();
+  }, [petId]);
 
   return (
-    <GlobalStyles.Container>
-      <View style={sheet.container}>
-        <Image
-          style={sheet.image}
-          source={require('../../assets/big-buddy.png')}
-        />
-        <Card
-          id={route.params.petId}
-          photoSource={undefined}
-          petType={'dog'}
-          title={'Buddy'}
-          subtitle={'Shiba Inu'}
-          age={'1 Year old'}
-          gender={'boy'}
-        />
-        <Text>{route.params.petId}</Text>
-      </View>
-    </GlobalStyles.Container>
+    <>
+      <CustomStatusBar
+        backgroundColor={headerBackgroundColor}
+        barStyle="light-content"
+      />
+      {pet?.photoSource && (
+        <>
+          <Styles.HeaderButton onPress={() => navigation.goBack()}>
+            <ArrowLeft />
+          </Styles.HeaderButton>
+          <Styles.Photo
+            source={pet!.photoSource}
+            backgroundColor={headerBackgroundColor}
+          />
+        </>
+      )}
+      <GlobalStyles.Container>
+        <Styles.CardContainer>
+          {pet && (
+            <Card
+              id={pet.id}
+              photoSource={undefined}
+              petType={pet.petType}
+              title={pet.title}
+              subtitle={pet.subtitle}
+              age={pet.age}
+              gender={pet.gender}
+            />
+          )}
+        </Styles.CardContainer>
+        <Text>{petId}</Text>
+      </GlobalStyles.Container>
+    </>
   );
 };
-
-const sheet = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF',
-  },
-  image: {},
-});
 
 export default Info;
