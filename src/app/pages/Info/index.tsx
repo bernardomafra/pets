@@ -1,7 +1,6 @@
 import React from 'react';
-import {Text} from 'react-native';
-
-import {AppContext} from '../../../entry/context';
+import {Image, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import * as Styles from './styles';
 import * as GlobalStyles from '../../../../global-styles';
@@ -13,7 +12,6 @@ import CustomStatusBar from '../../components/CustomStatusBar';
 import ArrowLeft from '../../assets/arrow-left.svg';
 
 import PetsService from '../../../infra/services/pets';
-import {useNavigation} from '@react-navigation/native';
 
 const Info = ({route}: Types.InfoPageProps) => {
   const {petId, headerBackgroundColor} = route?.params;
@@ -64,7 +62,20 @@ const Info = ({route}: Types.InfoPageProps) => {
             />
           )}
         </Styles.CardContainer>
-        <Text>{petId}</Text>
+        <Styles.Avatar>
+          {/* <Styles.AvatarColumn> */}
+          <Styles.AvatarRow>
+            <Styles.AvatarImage source={require('../../assets/jessi.png')} />
+            <Styles.AvatarColumn>
+              <Styles.AvatarRow justify="space-between">
+                <Styles.AvatarText>Jessi Kurniawan</Styles.AvatarText>
+                <Styles.AvatarDate>20 Jan 2021</Styles.AvatarDate>
+              </Styles.AvatarRow>
+              <Styles.AvatarSubtitle>Owner</Styles.AvatarSubtitle>
+            </Styles.AvatarColumn>
+          </Styles.AvatarRow>
+          {/* </Styles.AvatarColumn> */}
+        </Styles.Avatar>
       </GlobalStyles.Container>
     </>
   );
