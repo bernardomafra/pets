@@ -4,11 +4,12 @@ import {StackNavigationProp, StackScreenProps} from '@react-navigation/stack';
 // routes
 interface IInfoParams {
   petId: number;
+  headerBackgroundColor: string;
 }
 
 export type StackRouteList = {
   Home: undefined;
-  Info: {petId: number};
+  Info: {petId: number; headerBackgroundColor: string};
 };
 
 type Routes = 'Home' | 'Info';

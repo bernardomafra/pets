@@ -7,7 +7,8 @@ export type AppProviderProps = {
 };
 
 export interface IAppContext {
-  navigation: StackProps | undefined;
+  customStatusBarColor: string;
+  setCustomStatusBarColor: Function;
 }
 
 export type {StackProps};

@@ -17,7 +17,7 @@ const routesMap: Types.IRouteMap[] = [
     title: 'More information',
     headerShown: false,
     component: Info,
-    initialParams: {petId: 0},
+    initialParams: {petId: 0, headerBackgroundColor: '#FFF'},
   },
 ];
 

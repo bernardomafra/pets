@@ -3,16 +3,21 @@ import React from 'react';
 import * as Types from './types';
 
 export const AppContext = React.createContext<Types.IAppContext>({
-  navigation: undefined,
+  customStatusBarColor: '#FFF',
+  setCustomStatusBarColor: () => {},
 });
 
 const AppProvider = ({children}: Types.AppProviderProps) => {
-  // const reactNavigation = useNavigation<Types.StackProps>();
+  const [
+    customStatusBarColor,
+    setCustomStatusBarColor,
+  ] = React.useState<string>('#FFF');
 
   return (
     <AppContext.Provider
       value={{
-        navigation: undefined,
+        customStatusBarColor,
+        setCustomStatusBarColor,
       }}>
       {children}
     </AppContext.Provider>
