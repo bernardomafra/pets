@@ -10,3 +10,15 @@ export const getCardGenderColorByGender = (
 
   return map[gender];
 };
+
+export const getRandomColor = (): string => {
+  return (
+    'rgb(' +
+    Math.floor(Math.random() * 100) +
+    ',' +
+    Math.floor(Math.random() * 100) +
+    ',' +
+    Math.floor(Math.random() * 100) +
+    ')'
+  );
+};
