@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
   return (
     <Styles.HeaderContainer>
-      <Styles.SmallFont>Location</Styles.SmallFont>
+      <Styles.SmallFont>Localização</Styles.SmallFont>
       <Styles.Select>
         <MapPin />
         <Styles.BigFont>{location}</Styles.BigFont>
@@ -25,12 +25,12 @@ const Header: React.FC = () => {
       {!isKeyboardOpen && (
         <Styles.PremiumRow>
           <Styles.PremiumContainer>
-            <Styles.PremiumTitle>Become premium with us</Styles.PremiumTitle>
+            <Styles.PremiumTitle>Venha ser premium</Styles.PremiumTitle>
             <Styles.PremiumDescription>
-              Access more popular adopter and {'\n'}pets by upgrading to premium
+              Veja os donos e os pets mais populares atualizando para premium
             </Styles.PremiumDescription>
             <Button>
-              <Styles.ButtonText>Become Premium</Styles.ButtonText>
+              <Styles.ButtonText>Assinar premium</Styles.ButtonText>
             </Button>
           </Styles.PremiumContainer>
           <HeaderDog style={sheet.svg} />

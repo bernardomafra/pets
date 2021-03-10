@@ -39,10 +39,7 @@ const Info = ({route}: Types.InfoPageProps) => {
 
   return (
     <ScrollView>
-      <CustomStatusBar
-        backgroundColor={headerBackgroundColor}
-        barStyle="light-content"
-      />
+      <CustomStatusBar backgroundColor="#FFF" barStyle="dark-content" />
       {pet?.photoSource && (
         <>
           <Styles.HeaderButton onPress={() => navigation.goBack()}>
@@ -74,11 +71,11 @@ const Info = ({route}: Types.InfoPageProps) => {
               image={pet.owner.image}
               name={pet.owner.name}
               date={pet.owner.registerDate}
-              subtitle={'Owner'}
+              subtitle={'Dono'}
             />
           )}
         </Styles.AvatarWrapper>
-        <Styles.PetTraitsText>Traits</Styles.PetTraitsText>
+        <Styles.PetTraitsText>Características</Styles.PetTraitsText>
         <Styles.PetTraitsWrapper>
           {pet?.traits.map((trait) => (
             <Styles.PetTrait key={`${trait}-trait-${Math.random()}`}>
@@ -94,7 +91,7 @@ const Info = ({route}: Types.InfoPageProps) => {
             <Heart />
           </Styles.LikeButton>
           <Button size="fat">
-            <Styles.ButtonText>Adopt Now</Styles.ButtonText>
+            <Styles.ButtonText>Adotar agora</Styles.ButtonText>
           </Button>
         </Styles.Footer>
       </GlobalStyles.Container>

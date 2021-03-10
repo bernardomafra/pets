@@ -33,13 +33,9 @@ export const Row = styled.View`
   width: ${(props: Types.CardStyleRowProps) => props.width || '100%'};
 `;
 
-export const Photo = styled.Image``;
-
-export const PhotoContainer = styled.View`
+export const Photo = styled.Image`
   width: 160px;
   height: 160px;
-  background-color: ${(props: Types.CardStylePhotoProps) =>
-    props.backgroundColor || '#FFF'};
   border-radius: 24px;
 `;
 

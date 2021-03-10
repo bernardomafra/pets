@@ -4,6 +4,7 @@ import * as CommonStyles from '../../styles';
 import {GlobalSheet} from '../../../../pages/global/styles';
 
 import * as Types from './types';
+import {Image} from 'react-native';
 
 const WithPhoto = ({
   id,
@@ -21,11 +22,7 @@ const WithPhoto = ({
       style={GlobalSheet.boxShadow}
       onPress={() => viewPetInfo(id)}>
       <CommonStyles.LeftSide>
-        {photoSource && (
-          <CommonStyles.PhotoContainer backgroundColor={photoBackgroundColor}>
-            <CommonStyles.Photo source={photoSource} />
-          </CommonStyles.PhotoContainer>
-        )}
+        {photoSource && <CommonStyles.Photo source={photoSource} />}
       </CommonStyles.LeftSide>
       <CommonStyles.RightSide>
         <CommonStyles.Row spaced justify="space-between">

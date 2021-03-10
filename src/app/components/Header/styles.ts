@@ -61,6 +61,7 @@ export const PremiumTitle = styled.Text`
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
+  max-width: 60%;
 `;
 
 export const PremiumDescription = styled.Text`

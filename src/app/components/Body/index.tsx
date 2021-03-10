@@ -59,7 +59,7 @@ const Body: React.FC = () => {
         <Styles.InputBar onChangeText={(text) => setSearch(text)} />
         <SearchIcon />
         <Styles.SearchText>
-          {!search && 'Search pet to adopt'}
+          {!search && 'Procure um pet pelo seu nome'}
         </Styles.SearchText>
       </Styles.SearchBar>
       <Styles.Categories>
