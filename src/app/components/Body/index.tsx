@@ -1,5 +1,4 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
 
 import SearchIcon from '../../assets/search-icon.svg';
 
@@ -11,6 +10,7 @@ import List from '../List';
 
 import * as Styles from './styles';
 import * as Types from './types';
+import {GlobalSheet} from '../../pages/global/styles';
 
 const Body: React.FC = () => {
   const [search, setSearch] = React.useState<string>('');
@@ -55,7 +55,7 @@ const Body: React.FC = () => {
 
   return (
     <>
-      <Styles.SearchBar style={sheet.searchContainer}>
+      <Styles.SearchBar style={GlobalSheet.searchContainer}>
         <Styles.InputBar onChangeText={(text) => setSearch(text)} />
         <SearchIcon />
         <Styles.SearchText>
@@ -79,18 +79,5 @@ const Body: React.FC = () => {
     </>
   );
 };
-
-const sheet = StyleSheet.create({
-  searchContainer: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.23,
-    shadowRadius: 2.62,
-    elevation: 2,
-  },
-});
 
 export default Body;

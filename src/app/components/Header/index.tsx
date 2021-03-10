@@ -5,6 +5,7 @@ import MapPin from '../../assets/map-pin.svg';
 import ArrowDown from '../../assets/arrow-down.svg';
 import HeaderDog from '../../assets/header-dog.svg';
 import {StyleSheet, Keyboard} from 'react-native';
+import Button from '../Button';
 
 const Header: React.FC = () => {
   const [location, setLocation] = React.useState<String>('Sabará');
@@ -28,11 +29,9 @@ const Header: React.FC = () => {
             <Styles.PremiumDescription>
               Access more popular adopter and {'\n'}pets by upgrading to premium
             </Styles.PremiumDescription>
-            <Styles.PremiumButton>
-              <Styles.PremiumButtonText>
-                Become Premium
-              </Styles.PremiumButtonText>
-            </Styles.PremiumButton>
+            <Button>
+              <Styles.ButtonText>Become Premium</Styles.ButtonText>
+            </Button>
           </Styles.PremiumContainer>
           <HeaderDog style={sheet.svg} />
         </Styles.PremiumRow>

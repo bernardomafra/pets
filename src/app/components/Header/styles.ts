@@ -76,13 +76,7 @@ export const PremiumDescription = styled.Text`
   max-width: 70%;
 `;
 
-export const PremiumButton = styled.TouchableOpacity`
-  padding: 10px 19px;
-  background: #f57b51;
-  border-radius: 10px;
-`;
-
-export const PremiumButtonText = styled.Text`
+export const ButtonText = styled.Text`
   font-family: 'Poppins-Medium';
   font-style: normal;
   font-weight: 500;
