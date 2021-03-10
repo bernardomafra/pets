@@ -20,7 +20,7 @@ import {ScrollView} from 'react-native-gesture-handler';
 
 const Info = ({route}: Types.InfoPageProps) => {
   const {petId, headerBackgroundColor} = route?.params;
-  const [pet, setPet] = React.useState<Types.CardProps>();
+  const [pet, setPet] = React.useState<Types.PetReturn>();
   const navigation = useNavigation();
 
   React.useEffect(() => {
@@ -28,6 +28,7 @@ const Info = ({route}: Types.InfoPageProps) => {
       if (petId) {
         const response = await PetsService.getById(petId);
         if (response) {
+          console.log(response);
           setPet(response);
         }
       }
@@ -68,34 +69,25 @@ const Info = ({route}: Types.InfoPageProps) => {
           )}
         </Styles.CardContainer>
         <Styles.AvatarWrapper>
-          <Avatar
-            image={require('../../assets/jessi.png')}
-            name={'Jessi Kurniawan'}
-            date={'20 Jan 2021'}
-            subtitle={'Owner'}
-          />
+          {pet?.owner && (
+            <Avatar
+              image={pet.owner.image}
+              name={pet.owner.name}
+              date={pet.owner.registerDate}
+              subtitle={'Owner'}
+            />
+          )}
         </Styles.AvatarWrapper>
         <Styles.PetTraitsText>Traits</Styles.PetTraitsText>
         <Styles.PetTraitsWrapper>
-          <Styles.PetTrait>
-            <Badge label="Active" />
-          </Styles.PetTrait>
-          <Styles.PetTrait>
-            <Badge label="Friendly" />
-          </Styles.PetTrait>
-          <Styles.PetTrait>
-            <Badge label="Loyal" />
-          </Styles.PetTrait>
-          <Styles.PetTrait>
-            <Badge label="Playful" />
-          </Styles.PetTrait>
+          {pet?.traits.map((trait) => (
+            <Styles.PetTrait key={`${trait}-trait-${Math.random()}`}>
+              <Badge label={trait} />
+            </Styles.PetTrait>
+          ))}
         </Styles.PetTraitsWrapper>
         <Styles.Description>
-          Buddy is an active, playful, yet friendly and loyal dog for our
-          family. He loves to play fetch with people, and he don’t mind if
-          strange people pet his head. Buddy loves to wake up in the morning and
-          then wake you up too. He is friendly to everyone, even to cats and
-          bunnies.
+          {pet?.description || 'Sem descrição'}
         </Styles.Description>
         <Styles.Footer>
           <Styles.LikeButton style={GlobalStyles.GlobalSheet.boxShadow}>

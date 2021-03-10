@@ -55,7 +55,7 @@ const Body: React.FC = () => {
 
   return (
     <>
-      <Styles.SearchBar style={GlobalSheet.searchContainer}>
+      <Styles.SearchBar style={GlobalSheet.boxShadow}>
         <Styles.InputBar onChangeText={(text) => setSearch(text)} />
         <SearchIcon />
         <Styles.SearchText>
