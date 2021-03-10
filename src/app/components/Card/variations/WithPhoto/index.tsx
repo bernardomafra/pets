@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as CommonStyles from '../../styles';
-import sheet from '../../sheet';
+import {GlobalSheet} from '../../../../pages/global/styles';
 
 import * as Types from './types';
 
@@ -18,7 +18,7 @@ const WithPhoto = ({
 
   return (
     <CommonStyles.Container
-      style={sheet.boxShadow}
+      style={GlobalSheet.boxShadow}
       onPress={() => viewPetInfo(id)}>
       <CommonStyles.LeftSide>
         {photoSource && (

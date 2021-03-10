@@ -1,7 +1,7 @@
 import React from 'react';
 
 import * as Styles from './styles';
-import * as GlobalStyles from '../../../../global-styles';
+import * as GlobalStyles from '../global/styles';
 
 import CustomStatusBar from '../../components/CustomStatusBar';
 import Header from '../../components/Header';

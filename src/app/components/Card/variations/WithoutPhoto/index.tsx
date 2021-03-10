@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as CommonStyles from '../../styles';
 import * as Styles from './styles';
-import sheet from '../../sheet';
+import {GlobalSheet} from '../../../../pages/global/styles';
 
 import * as Types from './types';
 
@@ -14,7 +14,7 @@ const WithoutPhoto = ({
   Gender,
 }: Types.CardWithoutPhotoProps) => {
   return (
-    <CommonStyles.Container direction="column" style={sheet.boxShadow}>
+    <CommonStyles.Container direction="column" style={GlobalSheet.boxShadow}>
       <Styles.RowGroup>
         <CommonStyles.Row spaced>
           <CommonStyles.Title>{title}</CommonStyles.Title>
