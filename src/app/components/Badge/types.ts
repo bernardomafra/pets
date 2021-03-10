@@ -1,5 +1,5 @@
 export type BadgeProps = {
-  petType: string;
+  petType?: string;
   label: string;
   selected?: boolean;
   onClickAction?: (param: any) => void;
@@ -7,4 +7,5 @@ export type BadgeProps = {
 
 export type BadgeStyleProps = {
   selected?: boolean | false;
+  hasIcon?: boolean | false;
 };

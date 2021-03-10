@@ -4,7 +4,7 @@ export const SearchBar = styled.View`
   display: flex;
   flex-direction: row;
   align-items: center;
-  flex: 1;
+  height: 48px;
 
   background-color: #fff;
 

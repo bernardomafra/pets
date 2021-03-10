@@ -7,10 +7,14 @@ export const Badge = styled.TouchableOpacity`
   align-items: center;
   justify-content: space-around;
   padding: 10px;
-  width: 84px;
+  min-width: 84px;
 
   background: ${(props: Types.BadgeStyleProps) =>
-    props.selected ? '#F57B51' : 'rgba(196, 196, 196, 0.15)'};
+    props.hasIcon
+      ? props.selected
+        ? '#F57B51'
+        : 'rgba(196, 196, 196, 0.15)'
+      : '#FFF'};
   border-radius: 10px;
 `;
 

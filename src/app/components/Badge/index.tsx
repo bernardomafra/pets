@@ -3,6 +3,7 @@ import * as Styles from './styles';
 import {getIconSvgByPetType} from '../../../entry/utils';
 
 import * as Types from './types';
+import {GlobalSheet} from '../../pages/global/styles';
 
 const Badge: React.FC<Types.BadgeProps> = ({
   petType,
@@ -17,7 +18,11 @@ const Badge: React.FC<Types.BadgeProps> = ({
   }
 
   return (
-    <Styles.Badge selected={selected} onPress={onClickAction}>
+    <Styles.Badge
+      style={!petType ? GlobalSheet.boxShadow : {}}
+      selected={selected}
+      hasIcon={!!petType}
+      onPress={onClickAction}>
       {Icon && <Icon fill={selected ? '#FFF' : '#777777'} />}
       <Styles.BadgeText selected={selected}>{label}</Styles.BadgeText>
     </Styles.Badge>
